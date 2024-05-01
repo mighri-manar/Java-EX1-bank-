@@ -1,5 +1,4 @@
 public class Banque {
-    //in this class we will encapsulate all acounts in an array
     private Compte[] comptes;
     private int nbComptes;
     private final int TAILLE = 100;
@@ -10,7 +9,6 @@ public class Banque {
     }
 
     public void ajouterCompte(Compte c) {
-        //if the account exists in the array we will not add it
         for (int i = 0; i < nbComptes; i++) {
             if (comptes[i].equals(c)) {
                 return;
