@@ -1,16 +1,16 @@
 public class Compte {
-    private int numCompte;
+    private final int numCompte;
     private double solde;
     private Personne titulaire;
 
     public Compte(int numCompte, double solde, Personne titulaire) {
         this.numCompte = numCompte;
         this.solde = solde;
+        this.titulaire = titulaire;
     }
 
     public Compte(int numCompte, Personne titulaire){
-        this.numCompte=numCompte;
-        this.titulaire=titulaire;
+        this(numCompte, 0, titulaire);
     }
 
     public void deposer(double montant){
