@@ -2,10 +2,12 @@ public class Banque {
     private Compte[] comptes;
     private int nbComptes;
     private final int TAILLE = 100;
+    private String name;
 
-    public Banque() {
+    public Banque(String nom) {
         comptes = new Compte[TAILLE];
         nbComptes = 0;
+        name = nom;
     }
 
     public void ajouterCompte(Compte c) {
@@ -58,4 +60,20 @@ public class Banque {
         }
         return num;
     }
+
+    public void fermerCompte(int numCompte){
+        for (int i = 0; i < nbComptes; i++) {
+            if (comptes[i].getNumCompte() == numCompte) {
+                comptes[i] = comptes[nbComptes - 1];
+                comptes[nbComptes - 1] = null;
+                nbComptes--;
+                break;
+            }
+        }
+    }
+    
+
+
+
+
 }
